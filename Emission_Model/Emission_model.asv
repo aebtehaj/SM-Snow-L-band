@@ -1,0 +1,47 @@
+% Emission Model
+% Divya Kumawat, 06/2022
+%% Computes brightness temperature at Vertical and Horizontal Polarization for land-snow-vegetation system at L-band (1.4 GHz)
+
+%Example
+%-------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+% % Inputs
+% % ----------------------------------------------------------------------
+% % omega = 0.05;                       % grasslands
+% % alpha_i = 40;                       % observation angle
+% % fGHz = 1.4;                         % frequency (GHz)
+% % T_soil = 275;                       % Temperature of ground (K)
+% % T_snow = 268.15;                    % Mean Temperature of snowpack (K)
+% % T_canopy = 268.15;                  % Temperature of vegetation (K)
+% % clayfrac = 0.13;                    % clay fraction (-)
+% % h = 0.1;                            % roughness parameter (Q/H model) (-)
+% % tau = 0.25;                         % Vegetation Optical depth (VOD) (-)
+% % rho_s = 250;                        % Density of snowpack (kg/m^3)
+% % theta = 0.2;                        % Liquid soil moisture content (m^3/m^3)
+% % 
+% % Tb= Emission_model(T_canopy,tau,omega,h,fGHz,alpha_i,T_snow,T_soil,theta,clayfrac,rho_s);
+
+function [Tb,gammav,gammah,espr_snow,espr_ground,Tb_DMRT,Tb_upwelling, Tb_downwelling_reflected] =Emission_model(Tcanopy,tau,omega,h,freq,obs_angle,Tsnow,Tg,mv,clayfrac,rho_s)
+
+% Vegetation Microwave Transmissivity
+angler = obs_angle.*pi./180 ;
+exptau= exp(-tau./cos(angler));
+
+[Tb_DMRT,espr_snow,espr_ground]= DMRT_QMS_PM(freq,obs_angle,Tsnow,Tg,mv,clayfrac,n,rough,tau_DMRT,rho_s);
+                                            freq,obs_angle,Tsnow,Tg,mv,clayfrac,rho_s
+d0 = linspace(0.1,2,1000);
+%gammav_m = zeros(1000); gammah_m = zeros(1000);
+for i = 1:length(d0)
+    [~, ~, gammav_m(i), gammah_m(i)] = Refl_TwoLayerComposite3(espr_snow, espr_ground, d0(i), 40, freq,h);
+end
+gammav = mean(gammav_m);
+gammah = mean(gammah_m);
+
+Tb_upwelling = Tcanopy.*(1-omega).*(1-exptau);
+Tb_downwelling_reflected = [Tcanopy.*(1-omega).*(1-exptau).*gammav.*exptau;Tcanopy.*(1-omega).*(1-exptau).*gammah.*exptau];
+
+TBv  = Tb_DMRT(1,1).*exptau + Tcanopy.*(1-omega).*(1-exptau).*gammav.*exptau + Tcanopy.*(1-omega).*(1-exptau);
+TBh  = Tb_DMRT(2,1).*exptau + Tcanopy.*(1-omega).*(1-exptau).*gammah.*exptau + Tcanopy.*(1-omega).*(1-exptau);
+
+Tb=[TBv;TBh];
+end
