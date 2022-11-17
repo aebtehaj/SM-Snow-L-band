@@ -7,3 +7,4 @@ Main results can be viewed at [https://github.com/aebtehaj/SM-Snow-L-band/blob/m
 Kumawat D., M. Olyaei, L. Gao, A. Ebtehaj, Passive Microwave Retrieval of Soil Moisture below Snowpack at L-band using SMAP Observations, IEEE Trans. on Geosci. and Remote Sens., DOI:10.1109/TGRS.2022.3216324. 
 
 Divya Kumawat and Ardeshir Ebtehaj 10/8/2022 (V01)
+![sno_soil](https://user-images.githubusercontent.com/46690843/202563958-17da3cae-20d6-4e2d-8e37-ec48d13ad2e8.png)
