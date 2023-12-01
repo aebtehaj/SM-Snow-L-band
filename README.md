@@ -4,7 +4,7 @@ This repository presents a forward emission model and to simulate L-band microwa
 
 Main results can be viewed at [https://github.com/aebtehaj/SM-Snow-L-band/demo](https://htmlpreview.github.io/?https://github.com/aebtehaj/SM-Snow-L-band/blob/main/LiveDemo_tau_omega_snow.html)
 
-Please find the downloadable link for the dataset of VOD and soil permittivity retrieved over snow-covered areas from 2015--2020, here: https://drive.google.com/file/d/1SQBeO_M5zdhZMwlbM90Xo6bqVC92ELPs/view?usp=sharing](https://drive.google.com/file/d/1QJCsn_ehkMMrFgh25Dr8Tn7hYURWZHw9/view?usp=sharing
+Please find the downloadable link for the dataset of VOD and soil permittivity retrieved over snow-covered areas from 2015--2020, here: https://drive.google.com/file/d/1QJCsn_ehkMMrFgh25Dr8Tn7hYURWZHw9/view?usp=sharing
 
 Kumawat D., M. Olyaei, L. Gao, A. Ebtehaj, Passive Microwave Retrieval of Soil Moisture below Snowpack at L-band using SMAP Observations, IEEE Trans. on Geosci. and Remote Sens., DOI:10.1109/TGRS.2022.3216324. 
 
