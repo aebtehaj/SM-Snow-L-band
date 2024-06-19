@@ -15,7 +15,7 @@ Divya Kumawat and Ardeshir Ebtehaj 10/8/2022 (V01)
 </p>
 
 <h2>Publications</h2>
-- <a href="https://ieeexplore.ieee.org/abstract/document/9927161">Kumawat, D., Olyaei, M., Gao, L. and Ebtehaj, A., 2022. Passive microwave retrieval of soil moisture below snowpack at l-band using smap observations. IEEE Transactions on Geoscience and Remote Sensing, 60, pp.1-16.</a>
+- <a href="https://ieeexplore.ieee.org/abstract/document/9927161">Kumawat, D., Olyaei, M., Gao, L. and Ebtehaj, A., 2022. Passive microwave retrieval of soil moisture below snowpack at l-band using smap observations. IEEE Transactions on Geoscience and Remote Sensing, 60, pp.1-16.</a><br>
 - <a href="https://www.sciencedirect.com/science/article/pii/S0034425724001561">Kumawat, D., Ebtehaj, A., Schwank, M., Li, X., & Wigneron, J. P. (2024). Global estimates of L-band vegetation optical depth and soil permittivity of snow-covered boreal forests and permafrost landscape using SMAP satellite data. Remote Sensing of Environment, 306, 114145.</a>
 
 
